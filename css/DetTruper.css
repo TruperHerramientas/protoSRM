@@ -1,0 +1,522 @@
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.rightPadding {
+	padding-right: 7px;
+}
+.rightPaddingBorderT{
+	padding-right: 7px;
+	border-top: 1px solid #000000;
+}
+.rightPaddingBorderB{
+	padding-right: 7px;
+	border-bottom: 1px solid #000000;
+}
+.rightPaddingBorderBR{
+	padding-right: 7px;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;	
+}
+.rightPaddingBorderR{
+	padding-right: 7px;
+	border-right: 1px solid #000000;	
+}
+.rightPadding20BorderT{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 20px;
+	border-top: 1px solid #000000;
+}
+.rightPadding35BorderT{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 30px;
+	border-top: 1px solid #000000;
+}
+.rightPadding70BorderT{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 70px;
+	border-top: 1px solid #000000;
+}
+.rightPadding50BorderT{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 50px;
+	border-top: 1px solid #000000;
+}
+.rightPadding100BorderT{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 100px;
+	border-top: 1px solid #000000;
+}
+optGroup{
+	color:#FFFFFF;
+	font-weight: bold;
+	background-color:#000066;
+}
+option{
+	color:#000000;
+	font-weight: normal;
+	background-color:#ffffff;
+}
+.paninbLRB
+{
+	border-bottom:  1px solid #000000;
+	border-left:    1px solid #000000;
+	border-right:   1px solid #000000;
+}
+.paninbLB
+{
+	border-bottom:  1px solid #000000;
+	border-left:    1px solid #000000;
+}
+.tituloch_2
+{
+    FONT-SIZE: 11pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/reng2.gif);
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.tituloch_3
+{
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/reng2.gif);
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.tituloch3RM
+{
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont_45.gif);
+	background-color: #6D696A;
+    COLOR: WHITE;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.titulom_t
+{
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont_45.gif);
+	background-color: #6D696A;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+    border-bottom: 1px solid #000000;
+}
+.tituloch3RBorderB
+{
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont_45.gif);
+	background-color: #6D696A;
+    COLOR: WHITE;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+    border-bottom: 1px solid #000000;
+}
+.titulom3R
+{
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont_45.gif);
+	background-color: #6D696A;
+    COLOR: WHITE;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.titulomCte2R
+{
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/reng2.gif);
+	background-color: #E3E3E3;
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.rightPadding2BorderLBlack{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 5px;
+	border-left: 1px solid #FFFFFF; 
+}
+.rightPadding2BorderLGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 5px;
+	border-left: 1px solid #999999; 
+}
+.rightPadding20BorderLGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 20px;
+	border-left: 1px solid #999999; 
+}
+.rightPadding20BorderLBlack{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 20px;
+	border-left: 1px solid #000000; 
+}
+.rightPadding2BorderBLGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 5px;
+	border-left: 1px solid #999999; 
+	border-bottom: 1px solid #999999; 
+}
+.rightPadding20BorderBLGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 20px;
+	border-left: 1px solid #999999; 
+	border-bottom: 1px solid #999999; 
+}
+.rightPadding20BorderBGrayLBlack{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 20px;
+	border-bottom: 1px solid #999999; 
+	border-left: 1px solid #000000; 
+}
+.rightPadding2BorderBGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 5px;
+	border-bottom: 1px solid #999999; 
+}
+.rightPadding20BorderBGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	padding-right: 20px;
+	border-bottom: 1px solid #999999; 
+}
+.borderBGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-bottom: 1px solid #999999; 
+}
+.borderBGrayLWhite{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-bottom: 1px solid #999999; 
+	border-left: 1px solid #FFFFFF; 
+}
+.borderBLGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-left: 1px solid #999999; 
+	border-bottom: 1px solid #999999; 
+}
+.borderLGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-left: 1px solid #999999; 
+}
+.borderBLRGray{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-left: 1px solid #999999; 
+	border-bottom: 1px solid #999999; 
+	border-right: 1px solid #999999; 
+}
+
+.borderBWhite{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-bottom: 1px solid #FFFFFF; 
+}
+.borderBLWhite{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-left: 1px solid #FFFFFF; 
+	border-bottom: 1px solid #FFFFFF; 
+}
+.borderLWhite{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-left: 1px solid #FFFFFF; 
+}
+.borderBLRWhite{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-left: 1px solid #FFFFFF; 
+	border-bottom: 1px solid #FFFFFF; 
+	border-right: 1px solid #FFFFFF; 
+}
+.borderBRWhite{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-bottom: 1px solid #FFFFFF; 
+	border-right: 1px solid #FFFFFF; 
+}
+.borderBBlackRWhite{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-bottom: 1px solid #000000; 
+	border-right: 1px solid #FFFFFF; 
+}
+.borderBBlack{
+    FONT-SIZE: 8pt;
+    LINE-HEIGHT: 12pt;
+    FONT-FAMILY: Arial;
+	border-bottom: 1px solid #000000; 
+}
+.titulochCte2R_A
+{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont02_22.gif);
+	background-color: #E3E3E3;
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.titulochCte2R_B
+{
+    FONT-SIZE: 10pt;
+    LINE-HEIGHT: 12pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont02_22.gif);
+	background-color: #E3E3E3;
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+.internalBordersTleftPadding5{
+	border-top: 1px solid #000000;
+	padding-left:5px;
+}
+.microTituloch
+{
+    FONT-SIZE: 7pt;
+    FONT-WEIGHT: bold;
+    background-image:url(../img/nuevoEstilo/titles_cont.gif);
+	background-color: #6D696A;
+    COLOR: WHITE;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+}
+
+.titulochCte_Periodo01
+{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black; 
+}
+.titulochCte_Periodo02
+{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+    border-right: 1px solid black; 
+}
+.titulochCte_PeriodoFuturo
+{
+    FONT-SIZE: 9pt;
+    LINE-HEIGHT: 12pt;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center;
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black; 
+}
+.titulomInternalBordersB{
+    FONT-SIZE: 12pt;
+    LINE-HEIGHT: 12pt;
+    FONT-WEIGHT: bold;
+	border-bottom: 1px solid #000000;
+}
+.internalBordersWRBB{
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #000000;
+}
+.internalBordersWRBBT{
+	border-right:  1px solid #FFFFFF;
+	border-bottom: 1px solid #000000;
+	border-top:    1px solid #000000;
+}
+.internalBordersWLBB{
+	border-left: 1px solid #FFFFFF;
+	border-bottom: 1px solid #000000;
+}
+.internalBordersWLBBT{
+	border-left: 1px solid #FFFFFF;
+	border-bottom: 1px solid #000000;
+	border-top: 1px solid #000000;	
+}
+.internalBordersWLB{
+	border-left: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+.pestanaActiva_DT_BTRL
+{
+    	FONT-SIZE:    		9pt;
+    	LINE-HEIGHT:  		12pt;
+    	FONT-FAMILY:  		Arial;
+		border: 			1px solid #000000;
+		cursor: 			default;
+		background-image:	url(../img/nuevoEstilo/degra04.gif);
+		background-color: 	#FF6600;
+		font-family:		Arial, Helvetica, sans-serif;
+		font-size:			12px;
+		color: 				#FFFFFF;
+		font-weight:	 	bold;
+		cursor: 			default;
+}
+.pestanaActiva_DT_BTR
+{
+    	FONT-SIZE:    		9pt;
+    	LINE-HEIGHT:  		12pt;
+    	FONT-FAMILY:  		Arial;
+		border-bottom: 		1px solid #000000;
+		border-top: 		1px solid #000000;
+		border-right: 		1px solid #000000;
+		cursor: 			default;
+		background-image:	url(../img/nuevoEstilo/degra04.gif);
+		background-color: 	#FF6600;
+		font-family:		Arial, Helvetica, sans-serif;
+		font-size:			12px;
+		color: 				#FFFFFF;
+		font-weight: 		bold;
+		cursor: 			default;
+}
+.pestanaInactiva_DT_BTRL
+{
+    	FONT-SIZE:    		9pt;
+    	LINE-HEIGHT:  		12pt;
+    	FONT-FAMILY:  		Arial;
+		border-right: 		1px solid #000000;
+		border-top:   		1px solid #000000;
+		border-bottom:  	1px solid #000000;
+		border-left: 		1px solid #000000;
+		cursor: 			pointer;
+		font-weight: 		bold;
+	   	COLOR:		 		#000000;
+		background-image:	url(../img/nuevoEstilo/titles_cont02.gif);
+		background-repeat:	repeat;
+		background-color: 	#E3E3E3;
+}
+.pestanaInactiva_DT_BTR
+{
+    	FONT-SIZE:    		9pt;
+    	LINE-HEIGHT:  		12pt;
+    	FONT-FAMILY:  		Arial;
+		border-right: 		1px solid #000000;
+		border-top:   		1px solid #000000;
+		border-bottom:   	1px solid #000000;
+		cursor: 			pointer;
+		font-weight: 		bold;
+		background-image:	url(../img/nuevoEstilo/titles_cont02.gif);
+		background-repeat:	repeat;
+		background-color: 	#E3E3E3;
+    	COLOR: 				#000000;
+}
+.existTot {
+	color: #036;
+	cursor: pointer;	
+}
+
+.onoffswitch {
+    position: relative; width: 40px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 11px;
+}
+
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left; width: 50%; height: 12px; padding: 0; line-height: 12px;
+    font-size: 10px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "NO";
+    padding-left: 9px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: left;
+}
+
+.onoffswitch-inner:after {
+    content: "SI";
+    padding-right: 9px;
+    background-color: #FFA12F; color: #FFFFFF;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    width: 8px; margin: 2px;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 11px;
+    position: absolute; top: 0; bottom: 0; right: 24px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

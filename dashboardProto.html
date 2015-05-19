@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<link rel="stylesheet" type="text/css" href="proto.css">
+<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="proto.js"></script>
+<script src="mapaTareas.js"></script>
+<script src="vBase.js"></script>
+<script src="fComunes.js"></script>
+<script src="clases.js"></script>
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+<style>
+
+	table {
+		border-collapse: inherit !important;
+	}
+
+	.contenedor {
+		width:100% !important;
+		padding:1em 2px 1em 2px;
+		left:0%;
+		align-content:center;
+	}
+	
+	.divTareas {
+		min-width: 500px;
+		width:48% !important;
+		display:inline-block;
+		
+	}
+	
+	.divTareas table {
+		width:99%;
+		
+		text-align:center;
+		border-style: solid;
+   		border-width: 1px;
+		
+		background-repeat: no-repeat;
+	}
+	
+	.divTareas table tr td {
+		width:	50%;
+		text-align:center;
+	}
+	
+	.divDetalle {
+		min-width: 500px;
+		display:inline-block;
+		vertical-align:top;
+		width:48% !important;
+	}
+	
+	
+	
+	.divBloque {
+		
+		padding: 0.8em 0 0.4em 0;
+		
+	}
+	
+	.divBloque table {
+		background-color:#FFFFFF;
+		align-content:center;
+		width:160px; 
+		border-radius: 0px 0px 20px 20px;  
+		border-spacing: 0px;		
+	}
+	
+	.divBloque th{
+		padding			: .3em 0 .3em 0;
+		font-size		: 0.9em;
+		border-bottom	: 1px solid #000000;
+		background-color: ;
+		font-weight		: bold;
+	}
+	
+	.divBloque td{
+		padding: 5px 0px 5px 0px;
+	}
+	
+	.tdTodas {
+		border-bottom	: 1px solid #000000;
+		font-size		: 1.1em;
+	}
+	
+	.tdNormales {
+		text-align:center;
+		width:33% !important;
+	}
+	
+	.tdQuemadas {
+		text-align:center;
+		width:33% !important;
+	}
+	
+	.tdUrgentes {
+		text-align:center;
+		width:33% !important;
+	}
+	
+	
+</style>
+
+</head>
+
+<body>
+
+<div id="1" style="top: 0%;width: 100%;left: 0%;height: 5%; background:black;">
+	<div style="padding:.45em 1em;color: white;">
+		<input type="button" value="SALIR" style="float: right; color:white;" onClick="logout();">
+		<b>SRM&gt;<span id="usrHead" onclick="showTray();" style="cursor: pointer;">planeador</span>&gt;Dashboard
+		<span type="text" id="usrHead" onClick="showTray();"></span>
+		<span id="idTask" style="display:none;">&gt;<span id="taskId"></span></span>
+		</b>
+	</div>
+</div>
+
+<div id="contenedor" class="contenedor" align="center">
+
+	<div class="divTareas">
+    	
+    	<table cellpadding="0" cellspacing="0">
+        	<tr>
+            	<td align="center">
+                
+                	<div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Comprador</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                    
+                    <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Coordinador de Precios</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                    <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Gerente de Compras</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                    <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Director de Compras</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                    
+                </td>
+                <td align="center">
+                	
+					<div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Planeador</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                    <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Gerente de Planeación</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                    <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Director de Planeación</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                   
+                </td>
+            </tr>
+            
+            <tr>
+              <td colspan="2">
+              
+					 <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Director de Operación</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+                     <div align="center" class="divBloque">
+                      	<table >
+                        	<tr>
+                              <th colspan="3" >Director General</th>
+                            </tr>
+                            <tr>
+                              <td colspan="3" class="tdTodas"><img height="20" width="20" style="cursor:pointer;" src="img/todas.png"><sub>3</sub></td>
+                            </tr>
+                            <tr>
+                              	<td class="tdNormales" ><img height="20" width="20" style="cursor:pointer;" src="img/enCurso.png"><sub>1</sub></td>
+                            	<td class="tdUrgentes" ><img height="20" width="20" style="cursor:pointer;" src="img/urgentes.png"><sub>1</sub></td>
+                            	<td class="tdQuemadas" ><img height="20" width="20" style="cursor:pointer;" src="img/quemadas.png"><sub>1</sub></td>
+                            </tr>
+                        </table>
+					</div>
+                    
+              </td>
+            </tr>
+        </table>
+    	<br>
+    </div>
+    
+    <div class="divDetalle">
+    
+    <div id="4" style="min-height: 11em;">
+		<div style="font-weight: bold; font-size: 1em; float:left; width:auto; margin:.1em 2em;">
+			<img height="20" width="20" style="cursor:pointer;" src="img/todas.png">
+			<span style="color:#09C; font-weight:bold;">TODAS</span>
+		</div>
+		<div style="float:right; width:auto; margin:.1em 2em;">
+			<!--<input type="button" style="cursor:default;" value="Doble click para atender el registro">-->
+		</div><br><br>
+        <div style="overflow-y: scroll;vertical-align:top; height:50em">
+		<table class="table" id="ocs" style="border-collapse: collapse;"></table>
+		</div>
+	</div>
+    
+    
+    </div>
+    
+</div>
+<script>
+(function() {
+	user	= window.localStorage.getItem('usr');
+	console.log(user);
+	document.getElementById("usrHead").innerHTML = user;
+	
+	inicializaOrdenesCompra();
+	loadTray('todas',true);
+})();
+</script>
+</body>
+</html>

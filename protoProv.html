@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html class="html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+	.ui-dialog-titlebar-close {
+	  visibility: hidden;
+	}
+	
+	.ui-widget {
+		font-size: .875 em;	
+	}
+</style>
+<title>Fung&Rui Access</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta http-equiv="Cache-Control" content="no-cache">
+  <script language="JavaScript">
+
+	function venter(event) {
+		if ( event.keyCode == 13 ) {
+			submitLogin();
+		}
+	}
+	
+	function cambia(event) {
+		if ( event.keyCode == 13 ) {
+			document.forma.pwdTF.focus();
+		}
+	}
+
+	function changeImgSource( imgObj, source ){
+		imgObj.src = '/img/' + source;
+	}
+	
+	function submitLogin(){
+		cambiaPagina('bandejaProv.html');
+	}
+	
+</script>
+
+
+<script src="fComunes.js"></script>
+<link href="css/jqueryProveedores.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+      	<br><br>
+<div id="wrapper">
+  <div id="container">
+    <div id="content">
+      <div id="bien">
+      	<div id="logo"><img src="img/prov/logo.png" width="219" height="294" /></div>
+      	<p>Welcome to Fung & Rui Hong Kong Limited, we are a company specialized in the management, control and logistics for the shipment of imported goods.
+			In this website we offer all the services you need in order to:</p>
+<!-- 		<p> -->
+			<ul style="list-style-type:disc; list-style-position:inside;">
+    			<li>Create and follow the status of your Shipment Approval Requests (SAR)</li>
+    			<li>Request approval for the shipment of your purchase orders.</li>
+    			<li>Receive information and feedback with regard to your shipment.</li>
+    			<li>Receive the booking confirmation.</li>
+    			<li>Load your shipping documents.</li>
+    		</ul>
+<!--     	</p> -->
+   		<p>We hope you find our site functional and useful and we are at your disposal for any further question or information you may need. Do not hesitate to contact our customer support.</p>
+    	<p class="legal">Confidential information. Prohibited its  total or partial reproduction or disclosure and use without written permission from Fung & Rui</p>
+      </div>
+      <div id="form" style="top: 10%;">
+      <h3>LOGIN</h3>
+      
+      <form name="forma" id="forma" action="#">
+	  
+      
+      	<span id="waiting">&nbsp;</span>
+        <input name="userTF" id="userTF" size="28" maxlength="15" TabIndex="1" onKeyUp="cambia(event)"   type="text" class="user" placeholder="user" />
+      	<input name="pwdTF" id="pwdTF" size="28" maxlength="19" TabIndex="2" type="password" class="pass" placeholder="password" onKeyUp="venter(event)"/>
+        <input type="button" class="entrar" value="Continue" onclick="submitLogin()">
+        <div id="alerta" style="color:#FF0000;font-size:11px">
+		  <b>&nbsp;</b>
+		</div>
+      </form>
+	   
+                                                        
+	  
+      
+      <div class="forget">
+      <a href="#">Request for access</a>
+      <a href="#">I forgot my password</a>
+      <div class="clr">
+		
+	  </div>
+      </div>
+	  
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>This site is optimized for the following browsers:</p>
+      <p>&nbsp;</p>
+      <span> <a href="https://www.google.com/intl/en/chrome/browser/?hl=en" target="_blank"> <img src="img/prov/chrome.png" width="45" height="52" /></a> <a href="http://www.apple.com/safari/" target="_blank"><img src="img/prov/safari.png" width="45" height="52" /></a> </span>
+      </div>
+      <div class="clr"></div>
+    </div>
+    	
+    <br>
+  </div>
+  
+</div>                
+</body>
+
+</html>

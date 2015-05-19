@@ -1,0 +1,120 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	color: #5f6867;
+	/***font-family: 'Roboto', sans-serif;***/
+	font-family: 'Josefin Sans', sans-serif;
+	margin:0em;
+}
+
+iframe {
+	border: none;
+}
+
+input{
+	color: #5f6867;
+	/***font-family: 'Roboto', sans-serif;***/
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	padding: .4em 2.3em;
+	font-weight: bold;
+	border-bottom: 0.1em solid #E6E6E6;
+	margin: 0.3em;
+}
+
+input[type="button"] {
+	background:none;
+	color: #09C;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="submit"] {
+	background:none;
+	color: #09C;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+.login{
+	background: #34535E;
+	border: none;
+	border-radius: .5em;
+	padding: .5em 1.2em;
+	color: #A7E9FF;
+/**		border: 0.1em solid #E6E6E6;**/
+}
+
+div>label {
+	display: block;
+}
+
+label {
+	font-weight: bold;
+}
+
+header {
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	text-align: center;
+	width: 100%;
+}
+
+table th {
+	text-align: center;
+	font-weight: bold;
+	background: #E6E6E6;
+	height:2em;
+}
+
+table tr {
+	border-bottom: 0.1em solid #E6E6E6  ;
+}
+
+.table>tbody>tr:nth-child(odd) {
+	background: #F2F2F2;
+}
+
+table td {
+	padding: .4em .5em;
+}
+
+textarea {
+	border: .1em solid #dadada;
+	border-radius: .4em;
+	width: 100%;
+	resize: vertical;
+}
+
+.divSmallInput {
+	width: 10em;
+	display:inline-block;
+	padding: .5em .1em;
+}
+.divMediumInput {
+	width: 15em;
+	display:inline-block;
+	padding: .5em .1em;
+}
+.divLargeInput {
+	width: 20em;
+	display:inline-block;
+	padding: .5em .1em;
+}
+.divExtraLargeInput {
+	width: 30em;
+	display:inline-block;
+	padding: .5em .1em;
+}
+.fitOverflowContainer {
+	width: 100%;
+	overflow: auto;
+}

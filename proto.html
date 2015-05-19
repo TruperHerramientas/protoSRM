@@ -1,0 +1,833 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<head>
+<title>Seguimiento OC</title>
+<link rel="stylesheet" type="text/css" href="proto.css">
+<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700'
+	rel='stylesheet' type='text/css'>
+<script src="proto.js"></script>
+<script src="mapaTareas.js"></script>
+<script src="vBase.js"></script>
+<script src="fComunes.js"></script>
+<script src="clases.js"></script>
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<link href="css/timeline.css" rel="stylesheet" type="text/css" />
+</head>
+<body onLoad="JavaScript:inicializaMapas();	inicializaOrdenesCompra();"
+	style="padding-left: 5px; padding-right: 5px;">
+	<div id="1"
+		style="display: none; position: absolute; top: 0%; width: 100%; left: 0%; height: 7%; background: #3F515A;">
+		<div style="padding: .45em 1em;">
+			<b style="color: white;">
+				SRM&gt;
+				<span id="usrHead" onClick="showTray();"></span>
+				<span id="idTask" style="display: none;">
+					&gt;
+					<span id="taskId"></span>
+				</span>
+				<div class="outer" style="float: right; vertical-align: middle;">
+					<table width="300em" border="0" cellspacing="0" cellpadding="0"
+						height="15px" class="tablaPestanias">
+						<tr>
+							<td class="pestania" width="140px" height="20px" id="so_pestania"
+								style="display: none;" onClick="JavaScript:seguirOrden();">
+								<table width="100%" class="tablaSinFormato">
+									<tr>
+										<td height="18px" width="20px" align="center">
+											<img src="img/followSmall.png">
+										</td>
+										<td width="100px" class="textoPestania">Seguir Orden</td>
+									</tr>
+								</table>
+							</td>
+							<td width="10px" id="so_spc" style="display: none;">&nbsp;</td>
+							<td class="pestania"
+								onClick="window.open('dashboardProto.html');" id="tl_pestania"
+								style="display: none;">
+								<table width="100%" class="tablaSinFormato">
+									<tr>
+										<td height="20px" width="20px" align="center">
+											<img src="img/iconTimeLineSmall.png">
+										</td>
+										<td width="100px" class="textoPestania">Ver TimeLine</td>
+									</tr>
+								</table>
+							</td>
+							<td width="10px" id="tl_spc" style="display: none;">&nbsp;</td>
+							<td class="pestania"
+								onClick="window.open('dashboardProto.html');" id="db_pestania">
+								<table width="100%" class="tablaSinFormato">
+									<tr>
+										<td height="20px" width="20px" align="center">
+											<img src="img/iconDashboardSmall.png">
+										</td>
+										<td width="100px" class="textoPestania">Ver DashBoard</td>
+									</tr>
+								</table>
+							</td>
+							<td width="10px" id="db_spc">&nbsp;</td>
+							<td class="pestania" onClick="verNotificaciones();">
+								<table width="100%" class="tablaSinFormato">
+									<tr>
+										<td height="20px" width="15px" align="center">
+											<span class="num_notifs"
+												style="padding: .1em .6em; margin: 0em .5em;">5</span>
+										</td>
+										<td width="105px" class="textoPestania">Notificaciones</td>
+									</tr>
+								</table>
+							</td>
+							<td width="10px">&nbsp;</td>
+							<td class="pestania textoPestania" onClick="logout();"
+								width="100px">Salir</td>
+						</tr>
+					</table>
+				</div>
+			</b>
+		</div>
+	</div>
+	<div id="upperDiv" style="width: 100%; position: absolute; top: 3em;">
+		<div id="2"
+			style="display: none; position: absolute; top: 5%; height: 4em; width: 80em; padding-left: .3em">
+			<span style="font-weight: bold;">SEGUIMIENTO</span>
+			<span style="font-weight: bolder; font-size: 3.5em;">OC</span>
+			<!--		<span id="buttonDashboard"
+				style="float: right; height: 100%; padding-right: 2em; vertical-align: central; padding-top: 1em; cursor: pointer"
+				onClick="window.open('dashboardProto.html');">
+				<img height="30" src="img/iconDashboard.png">
+				Ver Dashboard
+			</span>
+ -->
+			<div id="buttonsId" style="float: right; display: none;">
+				<input type="button" value="Autorizar" style="margin: .3em;">
+				<input type="button" value="Rechazar" style="margin: .3em;">
+			</div>
+		</div>
+		<div id="contentContainer" style="position: absolute; top: 4em; height: auto; width: 84em;">
+			<div id="3"
+				style="display: none; width: 20em; padding: 1em; position: relative; overflow-y: scroll; height: 30em;">
+				<table style="color: #09C; font-weight: bold; text-align: left;">
+					<tr>
+						<th colspan="2"
+							style="text-align: left; background: #F2F2F2; color: #5f6867; border-top-left-radius: 1em; border-top-right-radius: 1em; padding: .3em 1em;">FILTRAR
+							POR STATUS</th>
+					</tr>
+					<tr style="background: #F2F2F2;">
+						<td>
+							<img height="20" width="20" src="img/enCurso.png">
+						</td>
+						<td>En Curso</td>
+					</tr>
+					<tr style="background: #F2F2F2;">
+						<td>
+							<img height="20" width="20" src="img/urgentes.png">
+						</td>
+						<td>Urgentes</td>
+					</tr>
+					<tr style="background: #F2F2F2;">
+						<td>
+							<img height="20" width="20" src="img/quemadas.png">
+						</td>
+						<td>Quemadas</td>
+					</tr>
+					<tr style="background: #F2F2F2;">
+						<td>
+							<img height="20" width="20" src="img/todas.png">
+						</td>
+						<td>Todas</td>
+					</tr>
+				</table>
+				<br>
+				<table style="color: #09C; font-weight: bold; text-align: left;"
+					id="idFilterTab"></table>
+				<table class="tablaSinFormato" id="idFilterOC">
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="4"
+							style="color: #5f6867; padding: .3em 1em; background: #F2F2F2; border-top-left-radius: 1em; border-top-right-radius: 1em;">Filtrado
+							de Órdenes</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<table class="tablaSinFormato" width="100%">
+								<tr>
+									<td>Buscar OC:</td>
+									<td>
+										<input type="text" id="boc" size="20" maxlength="20">
+									</td>
+									<td width="20px" align="center">
+										<img style="cursor: pointer;" src="img/lupa.gif"
+											onClick="buscarOrden();">
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<table class="tablaSinFormato" width="100%">
+								<tr>
+									<td width="80px">Proveedor</td>
+									<td colspan="2">
+										<select id="f_prov" name="f_prov" style="width: 15em;">
+											<option value="todos">- Todos -</option>
+											<option value="200020">ALCALOSA FORWARDING INC.
+											<option value="200021">ON TIME FORWARDING, INC.
+											<option value="200035">EXPRESS DEL NORTE FORWARDING
+												INC.
+											<option value="700423">MATSON INTERMODAL SYSTEM</option>
+											<option value="700761">GOWLING LAFLEUR HENDERSON LLP
+											</option>
+											<option value="700788">LATIN AMERICAN TELECOM, INC.
+											</option>
+											<option value="700917">Zip Carrriers Inc</option>
+											<option value="700921">Ramirez Clerical Services</option>
+											<option value="701175">BUSINESS AND TAX ADVISORS
+												GROUP LTD</option>
+											<option value="701200">PUENTE SUR LTDA.</option>
+											<option value="701300">Compania Chilena de
+												Navegacion Interoceanica, S.A.</option>
+											<option value="701510">PCIC INC.</option>
+											<option value="701535">ROCKWELL TRANSPORTATION SERV
+												INC</option>
+											<option value="702080">TAMEX FORWARDING</option>
+											<option value="702485">UNITED PARCEL SERVICE Co.</option>
+											<option value="702612">E.T.MANAGEMENT EN FINANCE
+												B.V.</option>
+											<option value="702640">PRODUCTIVITY SERVICES INC.</option>
+											<option value="702675">CACHEAUX, CAVAZOS & NEWTON,
+												L.L.P.</option>
+											<option value="702867">ATL Trade Ligistic, LLC</option>
+											<option value="702880">JACOBI INTERNATIONAL COMPANY,
+												INC.</option>
+											<option value="702891">THE FLORES LAW FIRM</option>
+											<option value="702915">THE FLORES LAW FIRM</option>
+											<option value="702977">LAW OFFICES OF RUDY VALNER</option>
+											<option value="703220">WORLD TRANSPORT SYSTEMS, INC
+											</option>
+											<option value="703355">GLUSMAN CHOWERS BROID, LAW
+												OFFICES</option>
+											<option value="703520">CRUZ, NIEMIEC & VAZQUEZ</option>
+											<option value="703575">INDY TRANSLATIONS LLC</option>
+											<option value="703855">MARKETING SUPPORT INC</option>
+											<option value="704101">SHANGHAI JIAHUAN NETWORK
+												TECHNOLOGY SHANGHAI JIAHUAN NETWORK TECHNOLOGY</option>
+											<option value="704102">SHANGHAI JIAHUAN NETWORK
+												TECHNOLOGY</option>
+											<option value="704363">APH INTERNATIONAL SERVICE,
+												INC</option>
+											<option value="704735">SHANGHAI HOYOU INTERNET
+												TECNOLOGY C</option>
+											<option value="704745">SHANGHAI EAST-GLOW DIGITAL
+												TECHONOL CO LTD</option>
+											<option value="704746">SHANGHAI HERRAMIENTAS
+												INVESTMENT CONSULTING CO LTD</option>
+											<option value="704835">BUSINESS INTELLIGENCE
+												CONSULTING, L</option>
+											<option value="704976">Business Intelligence
+												Consulting, L</option>
+											<option value="705090">AGENCIA EDUARDO MARTINEZ
+												MAGARIN., S de R.L. de C.V.</option>
+											<option value="705235">NORMA N. PULIDO</option>
+											<option value="705340">CURTIS MALLET-PREVOST COLT &
+												MOSLE</option>
+											<option value="705405">WALCH & SHURTI</option>
+											<option value="705616">ALPINE PROPERTY MANAGEMENT
+												ASPEN LL</option>
+											<option value="705617">CLEARWATER CONSTRUCION
+												MANAGEMENT</option>
+											<option value="705618">PRIMUS TELEGROUP</option>
+											<option value="705623">JAMANT ENTERPRISE COMPANY
+												LIMITED</option>
+											<option value="705624">SMART BEAR SOFTWARE INC</option>
+											<option value="705632">BCP SECURITIES, LLC</option>
+											<option value="705665">AKERMAN SENTERFITT LLP</option>
+											<option value="705681">BUFETE INTERNACIONAL DE
+												HONDURAS HONDURAS S DE RL</option>
+											<option value="705692">OWENS & WATSON TRUST CORP</option>
+											<option value="705695">AROCHI MARROQUIN LINDER &
+												ASOCIADOS SLP</option>
+											<option value="705805">AYALA & LOPEZ ABOGADOS</option>
+											<option value="705809">JONES DAY</option>
+											<option value="705890">MARCARIA .COM.CORP</option>
+											<option value="705985">ARMIDA MARIA LOPEZ VILLELA</option>
+											<option value="705996">AROCHI & LINDNDER S L</option>
+											<option value="706070">OWENS & WATSON MANAGEMENT
+												SERVICES LTD</option>
+											<option value="710137">BLOQUEADO FERROSTAAL AKTIENGE
+												SELLSCHAFT</option>
+											<option value="710203">INTEXIM INC.</option>
+											<option value="710359">BELLOTA LIMAS, S.A. DE C.V.</option>
+											<option value="720005">Addison & Co., Ltd.</option>
+											<option value="720006">A&L Handles, Inc.</option>
+											<option value="720008">American Tool Companies Inc.
+											</option>
+											<option value="720009">Archson Int.Co., Ltd.</option>
+											<option value="720010">Betakut S.p.A.</option>
+											<option value="720011">Bamberger Polymers Int. Corp.
+											</option>
+											<option value="720012">Bargos Steel, Inc.</option>
+											<option value="720013">Batil Batista Irmaos & Ca.
+												La.</option>
+											<option value="720014">Betty Hand Tools Corporation
+											</option>
+											<option value="720015">Big Q Products Inc.</option>
+											<option value="720016">Brusa Di Garboli Roberto & C.
+											</option>
+											<option value="720017">Carbbits Inc.</option>
+											<option value="720018">Castup Enterprise Co.</option>
+											<option value="720019">Creative Pultrusions, Inc.</option>
+											<option value="720020">CHAIN KUO'S INC.</option>
+											<option value="720021">Chang Loon Ind. Co., Ltd.</option>
+											<option value="720022">Charles D. Roberts Company</option>
+											<option value="720023">Deeps Tools PVT., LTD.</option>
+											<option value="720025">Eaton Steel Corp.</option>
+											<option value="720026">Empire Level Mfg. Corp.</option>
+											<option value="720027">Falci S.P.A.</option>
+											<option value="720028">FERRO CARBON ENT. CO., LTD.</option>
+											<option value="720029">Herramientas El Labrador,
+												S.A.L.</option>
+											<option value="720030">Hope Industrial Corporation</option>
+											<option value="720031">Huot Manufacturing Company</option>
+											<option value="720032">SouthLand Mower Corporation</option>
+											<option value="720033">INDEX MEASURING TAPE CO.,
+												LTD.</option>
+											<option value="720034">Indo Euro Exports</option>
+											<option value="720035">Infar Industrial Co., Ltd.</option>
+											<option value="720036">Inmaher S.L.</option>
+											<option value="720037">International Tool Boxes</option>
+											<option value="720038">C.I. Invermec, S.A.</option>
+											<option value="720039">Kai Suh Suh Enterprise Co.,
+												Ltd.</option>
+											<option value="720040">Kenda Rubber Industrial Co.,
+												Ltd.</option>
+											<option value="720041">Keson Industries, Inc.</option>
+											<option value="720042">kl & ling international, inc.
+											</option>
+											<option value="720043">Komelon Corporation</option>
+											<option value="720044">Lexen Corporation</option>
+											<option value="720045">Li Hsien Hardware Industry
+												Co.,Ltd .</option>
+											<option value="720046">Lucky- Brand Industrial Co.,
+												Ltd.</option>
+											<option value="720047">Madison Mill, Inc.</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<table class="tablaSinFormato" width="100%">
+								<tr>
+									<td width="80px">Familia</td>
+									<td colspan="2">
+										<select id="f_fam" name="f_fam" style="width: 15em;">
+											<option value="todos">- Todas -</option>
+											<option value="S031">Pallets, Tarimas y Páneles</option>
+											<option value="S019">Partes Semiterminadas para
+												Carretillas</option>
+											<option value="S004">Casquillos y Abrazaderas
+												Semiterminados</option>
+											<option value="S001">Mangos de Madera Semiterminados
+											</option>
+											<option value="P442">Accesorios para cable</option>
+											<option value="P274">Palas T-2000</option>
+											<option value="P248">Racks sin producto</option>
+											<option value="P237">Exhibidores despachadores</option>
+											<option value="P211">Maquinas duplicadora llaves
+												(refacciones)</option>
+											<option value="P209">Adhesivos</option>
+											<option value="P193">Seguetas para Arco</option>
+											<option value="P142">Cabeceras</option>
+											<option value="P141">Despachadores s/prod.</option>
+											<option value="P135">Tornillos de Banco</option>
+											<option value="P124">Remaches en bolsa</option>
+											<option value="P120">Rastrillos y Raspadores USA</option>
+											<option value="P109">Pisones USA</option>
+											<option value="P105">Palas USA</option>
+											<option value="P100">Martillos</option>
+											<option value="P099">Marros y Tajaderas USA</option>
+											<option value="P091">Llaves y Juegos</option>
+											<option value="P080">Limas</option>
+											<option value="P073">Hachas USA</option>
+											<option value="P068">Gatos de Botella</option>
+											<option value="P063">Extractores</option>
+											<option value="P060">Exhibidores monoproducto</option>
+											<option value="P057">Escobas para Jardín USA</option>
+											<option value="P052">Despachadores /Racks</option>
+											<option value="P045">Cortadores de Azulejo</option>
+											<option value="P044">Cortadores de Varilla</option>
+											<option value="P042">Conexiones Mangueras</option>
+											<option value="P032">Cerraduras de Sobreponer</option>
+											<option value="P028">Cavadores USA</option>
+											<option value="P026">Carretillas USA</option>
+											<option value="P017">Brocas para Metal</option>
+											<option value="P015">Brocas para Concreto</option>
+											<option value="P014">Bombas de Aire</option>
+											<option value="P009">Barretas USA</option>
+											<option value="P008">Azadones, cultivadores y
+												orilladores USA</option>
+											<option value="P007">Aspersores</option>
+											<option value="P002">Abrazaderas</option>
+											<option value="M017">Tornillos y Remaches</option>
+											<option value="M016">Soleras de Acero</option>
+											<option value="M014">Recubrimientos</option>
+											<option value="M013">Plásticos</option>
+											<option value="M012">Materiales de Empaque</option>
+											<option value="M011">Maquilas</option>
+											<option value="M010">Maderas</option>
+											<option value="M009">Láminas de Acero Rolado en Frío
+											</option>
+											<option value="M008">Láminas de Acero Rolado en
+												Caliente</option>
+											<option value="M007">Fundición/Inyección</option>
+											<option value="M006">Componentes en General</option>
+											<option value="M005">Componentes de Carretilla</option>
+											<option value="M004">Barras de Acero Redondo</option>
+											<option value="M003">Barras de Acero Hexagonales</option>
+											<option value="M002">Aluminio Extruído</option>
+											<option value="M001">Abrasivos</option>
+											<option value="IMP021 ">Maderas de importacion</option>
+											<option value="IMP020 ">Aceros Hexagonales de
+												Importación</option>
+											<option value="IMP019 ">Cuñas de de Importación</option>
+											<option value="IMP018 ">Cabezas de Azadón de
+												Importación</option>
+											<option value="IMP017 ">Cabezas de Hacha de
+												Importación</option>
+											<option value="IMP016 ">Cabezas de Martillo de
+												Importación</option>
+											<option value="IMP015 ">Polímeros de Importación</option>
+											<option value="IMP014 ">Barretas de Importación</option>
+											<option value="IMP013 ">Mangos de Fibra de Vidrio de
+												Importación</option>
+											<option value="IMP012 ">Biedos, Bielditos y
+												Cucharitas de Importación</option>
+											<option value="IMP011 ">Partes de Desarmadores de
+												Importación</option>
+											<option value="IMP010 ">Grips de Importación</option>
+											<option value="IMP009 ">Refacciones Importadas para
+												Carretillas</option>
+											<option value="IMP008 ">Llantas de Importación</option>
+											<option value="IMP007 ">Cabezas de Zapapicos,
+												Talachos-Pico...</option>
+											<option value="IMP006 ">Cabezas de Espátula de
+												Importación</option>
+											<option value="IMP005 ">Tornillería de Importación</option>
+											<option value="IMP004 ">Cabezas de Tijera de
+												Importación</option>
+											<option value="IMP003 ">Cabezas de Cuchara de
+												Importación</option>
+											<option value="IMP002 ">Cabezas de Escoba de
+												Importación</option>
+											<option value="IMP001 ">Partes y Materiales en Gral.
+												de Importación</option>
+											<option value="I029">Gastos Envases y Empaques</option>
+											<option value="I020">Mantenimiento y Rep. Maquinaria
+												y Equipo</option>
+											<option value="I017">Soldaduras</option>
+											<option value="I015">Refacciones Industriales</option>
+											<option value="I014">Químicos</option>
+											<option value="I007">Maquinados</option>
+											<option value="I006">Lubricantes</option>
+											<option value="I005">Herramientas</option>
+											<option value="I004">Ferretería</option>
+											<option value="I003">Equipo de Seguridad</option>
+											<option value="I001">Combustibles</option>
+											<option value="GA017  ">Flejes, cintas, cajas</option>
+											<option value="GA008  ">Solventes, adhesivos,
+												antioxidante...</option>
+											<option value="GA003  ">Válvulas, conexiones</option>
+											<option value="CARGO-C">Materiales 54, 55, 61</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<table class="tablaSinFormato" width="100%">
+								<tr>
+									<td width="80px">Célula</td>
+									<td colspan="2">
+										<select id="f_cel" name="f_cel" style="width: 15em;">
+											<option value="todos">- Todas -</option>
+											<option value="todas" selected>Todas</option>
+											<option value="I12">Accesorios Neumáti</option>
+											<option value="I18">Automotriz</option>
+											<option value="bwal">Bodega Walmart</option>
+											<option value="cad">Cadenas De Autoservicio</option>
+											<option value="I30">Carpintería</option>
+											<option value="cl">Casa Ley</option>
+											<option value="ch">Chedraui</option>
+											<option value="cm">Comercial Mexicana</option>
+											<option value="I16">Construcción 1</option>
+											<option value="I07">Construcción 2</option>
+											<option value="I21">Corte Y Desbaste 1</option>
+											<option value="I26">Corte Y Desbaste 2</option>
+											<option value="I14">Der. Petróleo</option>
+											<option value="I05">Fiero</option>
+											<option value="I03">Foset</option>
+											<option value="I17">Hermex</option>
+											<option value="hom">Home Depot</option>
+											<option value="I09">Jardinería Y Agric</option>
+											<option value="I10">Máquinas 1</option>
+											<option value="I13">Máquinas 2</option>
+											<option value="I01">Máquinas 3</option>
+											<option value="I08">Mecánica</option>
+											<option value="I25">Ricardo Cedillo G.</option>
+											<option value="I11">Riego</option>
+											<option value="I06">Rocío P. Romero M.</option>
+											<option value="I15">Seguridad Ind</option>
+											<option value="I27">Tania Mares C.</option>
+											<option value="I23">Verónica S. Lucero</option>
+											<option value="I02">Voltech 1</option>
+											<option value="I04">Voltech 2</option>
+											<option value="wal">Walmart</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<table class="tablaSinFormato" width="100%">
+								<tr>
+									<td width="28%">&nbsp;</td>
+									<td align="center" class="boton">Realizar Filtrado</td>
+									<td width="28%">&nbsp;</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="4" style="display: none; height: 30em; width: 60em; position: absolute;">
+				<div
+					style="font-weight: bold; font-size: 1em; float: left; width: auto; margin: .1em 2em;">
+					<img height="20" width="20" style="cursor: pointer;"
+						src="img/todas.png" onClick="loadTray();">
+					<span style="color: #09C; font-weight: bold;">TODAS</span>
+				</div>
+				<div style="float: right; width: auto; margin: .1em 2em;">
+					<input type="button" style="cursor: default;"
+						value="Doble click para atender el registro">
+				</div>
+				<br>
+				<br>
+				<br>
+				<div style="overflow-y: scroll; height: 20em;">
+					<table class="table" id="ocs"></table>
+				</div>
+				<div id="idCoordinadorPreciosDiv">
+					<br>
+					<table>
+						<tr>
+							<th colspan="3">Documentos para autorizar</th>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="http://intranet.truper.com/index.php?option=com_docman&task=doc_download&gid=83&Itemid=">
+									Nombre del documento</a>
+							</td>
+							<td>
+								<input type="button" value="Ver OCs asociadas">
+							</td>
+							<td>
+								<input type="button" value="Autorizar documento">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="5"
+		style="display: none; position: absolute; top: 15%; height: 85%; padding-left: 25px; padding-right: 25px;">
+		<table style="width: 100%;">
+			<tr>
+				<td align="left" style="padding-left: 1em;">
+					<input type="hidden" id="ocTaskId">
+					<input type="checkbox" id="idCheckUrgente" onChange="markUrgent();">
+					<label for="idCheckUrgente" style="display: initial;">Marcar
+						como Urgente</label>
+				</td>
+				<td width="*">&nbsp;</td>
+			</tr>
+		</table>
+		<h2>
+			<span id="idSemaforoOc">&nbsp;</span>
+			&nbsp;&nbsp;&nbsp;
+			<span id="idPoAtencion">&nbsp;</span>
+			&nbsp;-
+			<span id="idPoProveedor">Proveedor</span>
+		</h2>
+		<span style="display: inline-block">
+			<div id="idPoContentDiv">
+				<div class="divSmallInput">
+					<label for="idFecha">Fecha OC</label>
+					<span id="idFecha">- Cargando -</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idPlaneador">Planeador</label>
+					<span id="idPlaneador">- Cargando -</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idComprador">Comprador</label>
+					<span id="idComprador">- Cargando -</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idCondicionesEnvio">Condiciones de envio</label>
+					<span id="idCondicionesEnvio">- Cargando -</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idPuertoEnvio">Puerto de Env&iacute;o</label>
+					<span id="idPuertoEnvio">- Cargando -</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idPuertoRec">Puerto de Llegada</label>
+					<span id="idPuertoRec">- Cargando -</span>
+				</div>
+				<div class="divExtraLargeInput">
+					<label for="idTerminosPago">T&eacute;rminos de Pago</label>
+					<span id="idTerminosPago">- Cargando -</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idPesoTotal">Peso Total</label>
+					<span id="idPesoTotal"> - Cargando - </span>
+					<span id="idTipoPeso">Kg</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idVolumenTotal">Volumen Total</label>
+					<span id="idVolumenTotal"> - Cargando -</span>
+					<span id="idTipoVolumen">
+						M
+						<sup>3</sup>
+					</span>
+				</div>
+				<div class="divLargeInput">
+					<label for="idMontoTotal">Monto Total</label>
+					<span id="idMontoTotal"> - Cargando - </span>
+					<span id="idMonedaMonto">USD</span>
+				</div>
+				<div class="fitOverflowContainer">
+					<span style="font-size: .8em;">Seleccione un registro para
+						visualizar el detalle</span>
+					<table class="table" id="idPoProdDetTable">
+						<tr>
+							<th>- Cargando -</th>
+					</table>
+				</div>
+			</div>
+		</span>
+		<span>
+			<div id="divTimeLine"
+				style="font-size: 0.85em; height: 20em; overflow-y: scroll;">
+				<ul class="timeline">
+					<!-- Item 1 -->
+					<li>
+						<div class="direction-l">
+							<div class="flag-wrapper">
+								<span class="flag">Planeador</span>
+								<span class="time-wrapper">
+									<span class="time">25/02/2015 11:10 hrs</span>
+								</span>
+							</div>
+							<div class="desc">
+								<font color="#C23533">[Urgente] Aquí una nota de porqué
+									marcó como urgente</font>
+								<br>
+								Notas generales
+							</div>
+						</div>
+					</li>
+					<!-- Item 2 -->
+					<li>
+						<div class="direction-l">
+							<div class="flag-wrapper">
+								<span class="flag">Comprador</span>
+								<span class="time-wrapper">
+									<span class="time">25/02/2015 11:30 hrs</span>
+								</span>
+							</div>
+							<div class="desc">Notas del comprador.</div>
+						</div>
+					</li>
+					<!-- Item 3 -->
+					<li>
+						<div class="direction-r">
+							<div class="flag-wrapper">
+								<span class="flag">Coordinador de precios</span>
+								<span class="time-wrapper">
+									<span class="time">25/02/2015 11:30 hrs</span>
+								</span>
+							</div>
+							<div class="desc">Rechazó el documento Matriz_20150202.pdf</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</span>
+	</div>
+	<div id="6" style="height: 100%;" align="center">
+		<div id="logo">
+			<img src="images/logo_tel.png" width="332" height="46" />
+		</div>
+		<div id="content" style="width: 900px;">
+			<div id="bien" align="left">
+				<img src="images/bienvenido.png" width="154" height="22" />
+				<p>
+					Bienvenido a
+					<b>Truper en l&iacute;nea</b>
+					, el exclusivo e innovador servicio que Truper pone a tu
+					disposici&oacute;n para ayudarte a administrar mejor tu negocio.
+					<br>
+					Truper en l&iacute;nea te ofrece
+					<b>GRANDES</b>
+					beneficios:
+				</p>
+				<ul>
+					<li>
+						Consulta
+						<strong>personalizada y actualizada</strong>
+						de datos generales, cartera, facturaci&oacute;n, bonos, etc.
+					</li>
+					<li>
+						Elaboraci&oacute;n de pedidos utilizando diferentes criterios de
+						b&uacute;squeda de productos para
+						<strong>facilitar</strong>
+						la toma de decisiones.
+					</li>
+					<li>
+						Informaci&oacute;n
+						<strong>oportuna</strong>
+						de promociones, novedades y material de apoyo para el punto de
+						venta.
+					</li>
+				</ul>
+				<p>Truper en l&iacute;nea es una iniciativa que nos permite dar
+					un mejor servicio a nuestros clientes y nos consolida como la
+					empresa l&iacute;der en la industria ferretera en M&eacute;xico.</p>
+				<br>
+				<b>&iexcl;&Uacute;sala y disfruta de sus beneficios!</b>
+			</div>
+			<div id="form">
+				<h3>ACCESO</h3>
+				<form action="#" onSubmit="login(); return false;">
+					<input name="idUser" id="idUser" maxlength="15" class="user"
+						placeholder="usuario" autofocus />
+					<input name="idPass" id="idPass" maxlength="19" type="password"
+						class="pass" placeholder="contrase&ntilde;a" />
+					<input type="submit" class="entrar" value="entrar"/>
+				</form>
+				<b>
+					<br>
+					<div class="forget">
+						<a href="">Solicitud de acceso</a>
+						<a href="">Olvid&eacute; mi contrase&ntilde;a</a>
+					</div>
+				</b>
+				<br>
+				<br>
+				<p>
+					<span class="orange">Nota:</span>
+					<b> El sistema te solicitar&aacute; cambiar la clave de acceso
+						a Truper en l&iacute;nea cada 30 d&iacute;as para proteger la
+						confidencialidad de tu informaci&oacute;n.</b>
+				</p>
+			</div>
+			<div id="foot">
+				<a class="advice"
+					href="http://intranet.truper.com/index.php?option=com_docman&task=doc_download&gid=83&Itemid=">Aviso
+					de privacidad</a>
+				<p>Este sitio esta optimizado para los siguientes navegadores:</p>
+				<span>
+					<a href="https://www.google.com/intl/es/chrome/browser/?hl=es"
+						target="_blank">
+						<img src="images/chrome.png" width="45" height="52" />
+					</a>
+					<a href="http://www.apple.com/mx/safari/" target="_blank">
+						<img src="images/safari.png" width="45" height="52" />
+					</a>
+				</span>
+				<div class="phone">
+					<p>Si tienes dudas o problemas llamanos al:</p>
+					<img src="images/truper_tel.png" width="180" height="37" />
+				</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+		<div id="legales">
+			<p>Informaci&oacute;n Confidencial. Prohibida su
+				reproducci&oacute;n o divulgaci&oacute;n total o parcial, as&iacute;
+				como su uso o aprovechamiento sin autorizaci&oacute;n escrita de
+				Truper, S.A. de C.V.</p>
+		</div>
+	</div>
+	<div id="notificaciones"
+		style="display: none; position: absolute; right: 0em; top: 3em; width: 16em; height: 30em;"
+		align="center">
+		<table border="1" width="2.8em" style="background: white;"
+			align="center">
+			<tr>
+				<td bgcolor="#3F515A" style="color: white;">Notificaciones</td>
+			</tr>
+			<tr>
+				<td align="justify">
+					El Proveedor
+					<font color="#0099FF">[713220] Aceros Cuatro Caminos de CV</font>
+					ha sido
+					<font color="#FF0000">bloqueado</font>
+					.
+				</td>
+			</tr>
+			<tr>
+				<td align="justify">
+					El Proveedor
+					<font color="#0099FF">[718235] Vemequiem S.A. de C.V.</font>
+					ha autorizado la Orden
+					<font color="#006600" style="font-weight: bold;">9564880</font>
+					.
+				</td>
+			</tr>
+			<tr>
+				<td align="justify">
+					El Gerente de Compras ha autorizado la Orden
+					<font color="#006600" style="font-weight: bold;">9564850</font>
+					.
+				</td>
+			</tr>
+			<tr>
+				<td align="justify">
+					La Orden de Compra
+					<font color="#006600" style="font-weight: bold;">9564853</font>
+					ha sido
+					<font color="#FF0000">Eliminada</font>
+					.
+				</td>
+			</tr>
+			<tr>
+				<td align="justify">
+					La Orden de Compra
+					<font color="#006600" style="font-weight: bold;">9564855</font>
+					ha sido Autorizada por Dirección General.
+				</td>
+			</tr>
+			<tr>
+				<td align="justify">
+					Se han cargado documentos para la orden
+					<font color="#006600" style="font-weight: bold;">9564859</font>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
