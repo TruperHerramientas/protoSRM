@@ -294,7 +294,15 @@ function addTaskToTray(oc, taskIndex, rowIndex){
 	var proveedor = dameProveedor(oc.v);
 	var dataProv 	= '[' + oc.v + ']&nbsp;' + (esNulo(proveedor) ?  'Proveedor Desconocido' : 	proveedor.n + ' ( ' + proveedor.p + ') '); 
 	
-	cell2.innerHTML = oc.i + ' - <span class="textoMini">' + dataProv + '</span>:&nbsp;<span class="textoMaxi">' + oc.tarea[taskIndex].nombre + '</span>';
+	// var taskName = oc.tarea[taskIndex].nombre;
+	var taskName = findFilterByFilterPrefix(oc.ultimoTipoMovimiento);
+	if(taskName == undefined){
+		taskName = oc.tarea[taskIndex].nombre;
+	}else{
+		taskName = taskName.filterTitle;
+	}
+	
+	cell2.innerHTML = oc.i + ' - <span class="textoMini">' + dataProv + '</span>:&nbsp;<span class="textoMaxi">' + taskName + '</span>';
 	cell3.innerHTML = oc.tarea[taskIndex].fechaAsignacion.toLocaleString();
 	
 	var imgSem = document.createElement("img");

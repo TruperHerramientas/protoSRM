@@ -29,6 +29,8 @@ var dCP = new Filter();
 // DC
 var dGC = new Filter();
 
+var filterArr = [];
+
 function TipoTarea(){
 	this.id;
 	this.name;
@@ -173,29 +175,40 @@ function loadGeneralActions(){
 
 	todas.prefixFilter = "todas";
 	todas.filterTitle	= "Todas";
+	filterArr.push(todas);
 	nuevas.prefixFilter = "nuevas";
 	nuevas.filterTitle	= "Nuevas";
+	filterArr.push(nuevas);
 	rechazo.prefixFilter = "rechazo";
 	rechazo.filterTitle = "Rechazadas";
+	filterArr.push(rechazo);
 	prov.prefixFilter = "prov";
 	prov.filterTitle = "Del proveedor";
+	filterArr.push(prov);
 	formAut.prefixFilter = "formAut";
 	formAut.filterTitle = "Formato Autorizado";
+	filterArr.push(formAut);
 	asig.prefixFilter = "asig";
 	asig.filterTitle = "Por asignacion";
+	filterArr.push(asig);
 	delPlaneador.prefixFilter = "plan";
 	delPlaneador.filterTitle = "Del planeador";
+	filterArr.push(delPlaneador);
 	redireccionadas.prefixFilter = "redir";
 	redireccionadas.filterTitle = "Redireccionadas";
+	filterArr.push(redireccionadas);
 	dGP.prefixFilter = "dgp";
 	dGP.filterTitle = "Del gerente de planeacion";
+	filterArr.push(dGP);
 	dC.prefixFilter = "dc";
 	dC.filterTitle = "Del comprador";
+	filterArr.push(dC);
 	dCP.prefixFilter = "dcp";
 	dCP.filterTitle = "Del coordinador de precios";
+	filterArr.push(dCP);
 	dGC.prefixFilter = "dgc";
 	dGC.filterTitle = "Del Gerente de compras";
-
+	filterArr.push(dGC);
 }
 
 function redireccionar(){
@@ -287,6 +300,17 @@ function obtieneTipoTareaPorId(idTarea){
 	for(var a = 0; mapaTareas.length > a; a++){
 		if(mapaTareas[a].id == idTarea){
 			return mapaTareas[a];
+		}
+	}
+}
+
+function findFilterByFilterPrefix(filterPrefix){
+	var i;
+	for(i in filterArr){
+		var filter = filterArr[i];
+		var isPrefix = (filter.prefixFilter == filterPrefix);
+		if(isPrefix){
+			return filter;
 		}
 	}
 }
